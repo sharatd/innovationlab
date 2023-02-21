@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Parser</title>
+  <meta charset="UTF-8">
+  <style>
+    #dropzone {
+      width: 300px;
+      height: 200px;
+      border: 2px dashed #ccc;
+      margin: 20px;
+      padding: 20px;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    #filename {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    #filecontents {
+      margin-top: 20px;
+      white-space: pre-wrap;
+    }
+    #highlight {
+        background-color: #b2d8b2;
+    }
+  </style>
+</head>
+<body>
+  <div id="dropzone">Drag and drop files here</div>
+  <p id="testline">This is my <span class="highlight">test</span>test text</p>
+  <button id="parse-button" style="display: none;">Parse</button>
+  <div id="filename"></div>
+  <p id="filecontents"></p>
+  <script>
+    const dropzone = document.getElementById('dropzone');
+    const parseButton = document.getElementById('parse-button');
+    const filenameDiv = document.getElementById('filename');
+    const fileContentsPre = document.getElementById('filecontents');
+    alert(fileContentsPre);
+    let droppedFile = null;
+
+    function handleDragOver(event) {
+      event.preventDefault();
+      dropzone.classList.add('highlight');
+    }
+
+    function handleDragLeave(event) {
+      dropzone.classList.remove('highlight');
+    }
+
+    function handleDrop(event) {
+      event.preventDefault();
+      dropzone.classList.remove('highlight');
+      const files = event.dataTransfer.files;
+      if (files.length > 0) {
+        droppedFile = files[0];
+        filenameDiv.textContent = `Filename: ${droppedFile.name}`;
+        parseButton.style.display = 'block';
+      }
+      //highlightText();
+    }
+    async function readFileAsText(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.addEventListener('load', () => {
+          resolve(reader.result);
+        });
+        reader.addEventListener('error', () => {
+          reject(reader.error);
+        });
+        reader.readAsText(file);
+      });
+    }
+
+    parseButton.addEventListener('click', async () => {
+      try {
+        const fileContents = await readFileAsText(droppedFile);
+        fileContentsPre.innerHTML = fileContents;
+        alert(fileContentsPre);
+        let outer = fileContentsPre.outerHTML
+        alert(outer);
+        let highlightedText = highlightText(fileContentsPre);
+        const result = document.querySelector("#result");
+        result.innerHTML = highlightedText;
+        //alert(fileContents);
+      } catch (error) {
+        console.error(error);
+      }
+    });
+
+    function highlightText(parobj) {
+      const searchTerm = "verum";
+      alert(searchTerm)
+      const regex = new RegExp(searchTerm, "gi");
+
+      const highlightedText = parobj.replace(regex, `<span class="highlight">${searchTerm}</span>`);
+      alert(highlightedText);
+      return highlightedText;
+    }
+
+    dropzone.addEventListener('dragover', handleDragOver);
+    dropzone.addEventListener('dragleave', handleDragLeave);
+    dropzone.addEventListener('drop', handleDrop);
+  </script>
+</body>
+</html>
