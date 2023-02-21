@@ -34,6 +34,9 @@
   <div id="filename"></div>
   <p id="filecontents"></p>
   <script>
+    import { setList } from "./keywords.js";
+    
+
     const dropzone = document.getElementById('dropzone');
     const parseButton = document.getElementById('parse-button');
     const filenameDiv = document.getElementById('filename');
@@ -88,7 +91,13 @@
     });
 
     function highlightText(parobj) {
-      const searchTerm = "verum";
+      //const searchTerm = "verum";
+    
+      for (list in SetList){
+        for (phrase in list){
+          searchTerm.append(phrase)
+        }
+      }
       const regex = new RegExp(searchTerm, "gi");
       const highlightedText = parobj.replace(regex, `<span id="highlight">${searchTerm}</span>`);
       return highlightedText;
