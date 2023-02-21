@@ -127,9 +127,11 @@
           searchTerm.append(phrase)
         }
       }
+      print(searchTerm)
+      highlightedText = {}
       for (term in searchTerm){
         const regex = new RegExp(term, "gi");
-        const highlightedText = parobj.replace(regex, `<span id="highlight">${term}</span>`);
+        highlightedText.append(parobj.replace(regex, `<span id="highlight">${term}</span>`));
       }
       return highlightedText;
     }
