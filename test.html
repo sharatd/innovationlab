@@ -4,6 +4,7 @@
   <title>File Parser</title>
   <meta charset="UTF-8">
   <style>
+
     #dropzone {
       display:center;
       width: 300px;
@@ -47,21 +48,72 @@
       font-weight: bold;
     }
     #filecontents {
-      width:60%;
+      margin-left:100px;
+      width:80%;
       justify-content: left;
       margin-top: 20px;
       white-space: pre-wrap;
     }
+    .row {
+      display: flex;
+    }
+
+    .columnone {
+      flex: 70%;
+    }
+    .columntwo {
+      flex: 30%;
+      align-content:left;
+    }
+
+    #colorkey{
+      margin-right:100px;
+    }
     #highlight {
         background-color: #b2d8b2;
+    }
+
+    #keyone {
+      justify-content:left;
+      font-size:20px;
+      background-color: #b2d8b2;
+    }
+    #footer {
+      margin-right:-10px;
+      margin-left:-10px;
+      margin-top:50px;
+      margin-bottom:-20px;
+      padding-top:20px;
+      padding-bottom:20px;
+      padding-left:50px;
+      padding-right:50px;
+      text-align:center;
+      font-size:18px;
+      color:white;
+      background-color: #63599e;
     }
   </style>
 </head>
 <body>
-  <div id="dropzone">Drag and drop .txt files here</div>
-  <button id="parse-button" style="display: block"><h1 id="button-content">Parse</h1></button>
-  <div id="filename"></div>
-  <p id="filecontents"></p>
+  <div id="container"></div>
+    <div id="dropzone">Drag and drop .txt files here</div>
+    <button id="parse-button" style="display: block"><h1 id="button-content">Annotate</h1></button>
+    <div id="filename"></div>
+    <div class="row">
+      <div class="columnone">
+        <p id="filecontents"></p>
+      </div>
+      <div class="columntwo">
+        <p id="colorkey">
+        <span id="keyone">These are all of the instances of quod</span></p>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <p>This tool can assess various Data Use Agreements and give lawyers a preliminary report of what criteria it meets and does not meet, legally and ethically speaking. However, it is essential that a lawyer still does a final review of the document. This tool is meant to aid, but not replace, human oversight.</p>
+  </div>
+
+
   <script>
     const dropzone = document.getElementById('dropzone');
     const parseButton = document.getElementById('parse-button');
