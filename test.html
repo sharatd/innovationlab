@@ -115,6 +115,9 @@
 
 
   <script>
+    import { setList } from "./keywords.js";
+    
+
     const dropzone = document.getElementById('dropzone');
     const parseButton = document.getElementById('parse-button');
     const filenameDiv = document.getElementById('filename');
@@ -169,9 +172,17 @@
     });
 
     function highlightText(parobj) {
-      const searchTerm = "quod";
-      const regex = new RegExp(searchTerm, "gi");
-      const highlightedText = parobj.replace(regex, `<span id="highlight">${searchTerm}</span>`);
+      //const searchTerm = "verum";
+    
+      for (list in SetList){
+        for (phrase in list){
+          searchTerm.append(phrase)
+        }
+      }
+      for (term in searchTerm){
+        const regex = new RegExp(term, "gi");
+        const highlightedText = parobj.replace(regex, `<span id="highlight">${term}</span>`);
+      }
       return highlightedText;
     }
 
