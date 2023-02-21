@@ -30,7 +30,6 @@
 </head>
 <body>
   <div id="dropzone">Drag and drop files here</div>
-  <p id="testline">This is my <span class="highlight">test</span>test text</p>
   <button id="parse-button" style="display: none;">Parse</button>
   <div id="filename"></div>
   <p id="filecontents"></p>
@@ -39,7 +38,6 @@
     const parseButton = document.getElementById('parse-button');
     const filenameDiv = document.getElementById('filename');
     const fileContentsPre = document.getElementById('filecontents');
-    alert(fileContentsPre);
     let droppedFile = null;
 
     function handleDragOver(event) {
@@ -79,13 +77,11 @@
       try {
         const fileContents = await readFileAsText(droppedFile);
         fileContentsPre.innerHTML = fileContents;
-        alert(fileContentsPre);
-        let outer = fileContentsPre.outerHTML
-        alert(outer);
-        let highlightedText = highlightText(fileContentsPre);
+        let outer = fileContentsPre.outerHTML;
+        let highlightedText = highlightText(outer);
         const result = document.querySelector("#result");
-        result.innerHTML = highlightedText;
-        //alert(fileContents);
+        fileContentsPre.outerHTML = highlightedText;
+        result.outerHTML = highlightedText;
       } catch (error) {
         console.error(error);
       }
@@ -93,11 +89,8 @@
 
     function highlightText(parobj) {
       const searchTerm = "verum";
-      alert(searchTerm)
       const regex = new RegExp(searchTerm, "gi");
-
-      const highlightedText = parobj.replace(regex, `<span class="highlight">${searchTerm}</span>`);
-      alert(highlightedText);
+      const highlightedText = parobj.replace(regex, `<span id="highlight">${searchTerm}</span>`);
       return highlightedText;
     }
 
