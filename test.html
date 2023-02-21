@@ -5,21 +5,50 @@
   <meta charset="UTF-8">
   <style>
     #dropzone {
+      display:center;
       width: 300px;
-      height: 200px;
-      border: 2px dashed #ccc;
-      margin: 20px;
+      height: 150px;
+      border: 4px dashed #00778a;
+      margin: auto;
+      margin-top:40px;
+      margin-bottom:30px;
       padding: 20px;
       font-size: 24px;
       text-align: center;
     }
 
+    #parse-button {
+      margin:auto;
+      width:250px;
+      height:60px;
+      margin-bottom:0;
+      background-color: #63599e;
+    }
+
+    #parse-button:hover {
+      margin-top:0px;
+      height:60px;
+      width:250px;
+      background-color: #401f68;
+
+    }
+
+    #button-content{
+      color:white;
+      width:250px;
+      height:60px;
+      justify-content:center;
+    }
+
     #filename {
+      text-align: center;
       margin-top: 20px;
       font-size: 18px;
       font-weight: bold;
     }
     #filecontents {
+      width:60%;
+      justify-content: left;
       margin-top: 20px;
       white-space: pre-wrap;
     }
@@ -29,8 +58,8 @@
   </style>
 </head>
 <body>
-  <div id="dropzone">Drag and drop files here</div>
-  <button id="parse-button" style="display: none;">Parse</button>
+  <div id="dropzone">Drag and drop .txt files here</div>
+  <button id="parse-button" style="display: block"><h1 id="button-content">Parse</h1></button>
   <div id="filename"></div>
   <p id="filecontents"></p>
   <script>
@@ -98,8 +127,10 @@
           searchTerm.append(phrase)
         }
       }
-      const regex = new RegExp(searchTerm, "gi");
-      const highlightedText = parobj.replace(regex, `<span id="highlight">${searchTerm}</span>`);
+      for (term in searchTerm){
+        const regex = new RegExp(term, "gi");
+        const highlightedText = parobj.replace(regex, `<span id="highlight">${term}</span>`);
+      }
       return highlightedText;
     }
 
