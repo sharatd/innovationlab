@@ -9,7 +9,7 @@
       display:center;
       width: 300px;
       height: 150px;
-      border: 4px dashed #00778a;
+      border: 4px dashed #63599e;
       margin: auto;
       margin-top:40px;
       margin-bottom:30px;
@@ -23,14 +23,15 @@
       width:250px;
       height:60px;
       margin-bottom:0;
-      background-color: #63599e;
+      background-color: #401f68;
     }
 
     #parse-button:hover {
       margin-top:0px;
       height:60px;
       width:250px;
-      background-color: #401f68;
+      
+      background-color: #63599e;
 
     }
 
@@ -183,10 +184,25 @@
       color:white;
       background-color: #63599e;
     }
+    #header {
+      margin-right:-10px;
+      margin-left:-10px;
+      margin-bottom:60px;
+      margin-top:-10px;
+      padding-top:20px;
+      padding-bottom:20px;
+      padding-left:50px;
+      padding-right:50px;
+      text-align:center;
+      font-size:18px;
+      color:white;
+      background-color: #00778a;
+    }
   </style>
 </head>
 <body>
-  <div id="container"></div>
+  <div id="header">
+    <h1>Analyze Data Use Agreement</h1></div>
     <div id="dropzone">Drag and drop .txt files here</div>
     <button id="parse-button" style="display: block"><h1 id="button-content">Annotate</h1></button>
     <div id="filename"></div>
@@ -278,17 +294,17 @@
         console.error(error);
       }
     });
-    let parties = ['This Data Use Agreement is entered into', 'This Data Sharing Agreement is entered into', 'by and between'];
-    let purpose = ['Research purpose'];
-    let definitions = ['Agreement', 'Confidential information', 'Effective date','HIPAA', 'Personal information', 'Recipient', 'Requestor', 'Researcher', 'Identifiable information'];
-    let access_and_use = ['Restriction on use', 'Solely', 'Written consent', 'As permitted under this Agreement'];
-    let data_retention_and_deletion = ['retain', 'years'];
-    let liability_and_indemnification = ['Be liable for', 'The Recipient assumes all liability for damages which may arise from its use, storage or disposal of the Data', 'Injunction'];
-    let termination = ['This Agreement shall be effective on', 'Terminate', 'Prior written notice', 'Upon termination', 'Cease use of all Data', 'Return and destroy',
-'If the return or destruction of the Data is not feasible nor practicable, Recipient shall continue the protections required under this Agreement'];
-    let law_and_jurisdiction = ['Be governed by', 'Laws of the State of Illinois', 'Choice of law'];
+    let parties = ['This Data Use Agreement is entered into', 'This Data Sharing Agreement is entered into', 'by and between', 'non-profit'];
+    let purpose = ['Research purpose', 'purpose of research', 'purposes of research'];
+    let definitions = ['means', 'is defined as','identifiable','definitions','Confidential information', 'Effective date', 'Personal information', 'Requestor', 'Researcher', 'Identifiable information', 'Identifiers'];
+    let access_and_use = ['restrictions', 'as permitted','Restriction on use', 'Solely', 'Written consent', 'As permitted under this Agreement', 'As permitted by this DUA', 'safeguards', 'transmit', 'mitigate'];
+    let data_retention_and_deletion = ['retain', 'years', 'retention', 'delete'];
+    let liability_and_indemnification = ['Be liable for', 'liabilities', 'liability', 'The Recipient assumes all liability for damages which may arise from its use, storage or disposal of the Data', 'Injunction'];
+    let termination = ['This Agreement shall be effective on', 'Terminate', 'Prior written notice', 'Upon termination', 'Cease use of all Data', 'Return and destroy', 'return', 'destroy',
+'If the return or destruction of the Data is not feasible nor practicable, Recipient shall continue the protections required under this Agreement', 'termination'];
+    let law_and_jurisdiction = ['Be governed by', 'Laws of the State of Illinois', 'Choice of law', 'law or regulation', 'law', 'jurisdiction'];
     let severability = ['Conflict or violate applicable law', 'Invalid', 'Illegal', 'Unenforceable', 'The remaining terms', 'Shall remain in full force and effect'];
-    let modification = ['Modification of provision', 'waiver of provision', 'amendment of provision', 'Signed by both parties', 'In writing'];
+    let modification = ['Modification of provision', 'waiver of provision', 'waiver of authorization', 'amendment of provision', 'Signed by both parties', 'In writing', 'altered', 'amended', 'modified', 'waived', 'waiver'];
     let dispute_resolution = ['All disputes arising out of', 'Submitted for arbitration'];
     let allterms = [parties, purpose, definitions, access_and_use, data_retention_and_deletion, liability_and_indemnification, termination, law_and_jurisdiction, severability, modification, dispute_resolution];
 
