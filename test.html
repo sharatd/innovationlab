@@ -6,42 +6,248 @@
   <title>File Parser</title>
   <meta charset="UTF-8">
   <style>
+
     #dropzone {
+      display:center;
       width: 300px;
-      height: 200px;
-      border: 2px dashed #ccc;
-      margin: 20px;
+      height: 150px;
+      border: 4px dashed #63599e;
+      margin: auto;
+      margin-top:40px;
+      margin-bottom:30px;
       padding: 20px;
       font-size: 24px;
       text-align: center;
     }
 
+    #parse-button {
+      margin:auto;
+      width:250px;
+      height:60px;
+      margin-bottom:0;
+      background-color: #401f68;
+    }
+
+    #parse-button:hover {
+      margin-top:0px;
+      height:60px;
+      width:250px;
+      
+      background-color: #63599e;
+
+    }
+
+    #button-content{
+      color:white;
+      width:250px;
+      height:60px;
+      justify-content:center;
+    }
+
     #filename {
+      text-align: center;
       margin-top: 20px;
       font-size: 18px;
       font-weight: bold;
     }
     #filecontents {
+      margin-left:100px;
+      width:80%;
+      justify-content: left;
       margin-top: 20px;
       white-space: pre-wrap;
     }
-    #highlight {
+    .row {
+      display: flex;
+    }
+
+    .columnone {
+      flex: 70%;
+    }
+    .columntwo {
+      flex: 30%;
+      align-content:left;
+    }
+
+    #colorkey{
+      margin-right:100px;
+    }
+    #highlightone {
         background-color: #b2d8b2;
+    }
+    #highlighttwo {
+        background-color: #ea9a99;
+    }
+    #highlightthree {
+        background-color: #f6b26b;
+    }
+    #highlightfour {
+        background-color: #76a5af;
+    }
+    #highlightfive {
+        background-color: #ffe599;
+    }
+    #highlightsix {
+        background-color: #93c47d;
+    }
+    #highlightseven {
+        background-color: #b4a7d6;
+    }
+    #highlighteight {
+        background-color: #c27ba0;
+    }
+    #highlightnine {
+        background-color: #b7b7b7;
+    }
+    #highlightten {
+        background-color: #a7fbe5;
+    }
+    #highlighteleven {
+        background-color: #c9daf8;
+    }
+
+    #keyone {
+      justify-content:left;
+      font-size:20px;
+      background-color: #b2d8b2;
+    }
+
+    #keytwo {
+      justify-content:left;
+      font-size:20px;
+      background-color: #ea9a99;
+    }
+
+    #keythree {
+      justify-content:left;
+      font-size:20px;
+      background-color: #f6b26b;
+    }
+
+    #keyfour {
+      justify-content:left;
+      font-size:20px;
+      background-color: #76a5af;
+    }
+    
+    #keyfive {
+      justify-content:left;
+      font-size:20px;
+      background-color: #ffe599;
+    }
+
+    #keysix {
+      justify-content:left;
+      font-size:20px;
+      background-color: #93c47d;
+    }
+
+    #keyseven {
+      justify-content:left;
+      font-size:20px;
+      background-color: #b4a7d6;
+    }
+
+    #keyeight {
+      justify-content:left;
+      font-size:20px;
+      background-color: #c27ba0;
+    }
+
+    #keynine {
+      justify-content:left;
+      font-size:20px;
+      background-color: #b7b7b7;
+    }
+
+    #keyten {
+      justify-content:left;
+      font-size:20px;
+      background-color: #a7fbe5;
+    }
+
+    #keyeleven {
+      justify-content:left;
+      font-size:20px;
+      background-color: #c9daf8;
+    }
+
+    #footer {
+      margin-right:-10px;
+      margin-left:-10px;
+      margin-top:50px;
+      margin-bottom:-20px;
+      padding-top:20px;
+      padding-bottom:20px;
+      padding-left:50px;
+      padding-right:50px;
+      text-align:center;
+      font-size:18px;
+      color:white;
+      background-color: #63599e;
+    }
+    #header {
+      margin-right:-10px;
+      margin-left:-10px;
+      margin-bottom:60px;
+      margin-top:-10px;
+      padding-top:20px;
+      padding-bottom:20px;
+      padding-left:50px;
+      padding-right:50px;
+      text-align:center;
+      font-size:18px;
+      color:white;
+      background-color: #00778a;
     }
   </style>
 </head>
 <body>
-  <div id="dropzone">Drag and drop files here</div>
-  <p id="testline">This is my <span class="highlight">test</span>test text</p>
-  <button id="parse-button" style="display: none;">Parse</button>
-  <div id="filename"></div>
-  <p id="filecontents"></p> 
+  <div id="header">
+    <h1>Analyze Data Use Agreement</h1></div>
+    <div id="dropzone">Drag and drop .txt files here</div>
+    <button id="parse-button" style="display: block"><h1 id="button-content">Annotate</h1></button>
+    <div id="filename"></div>
+    <div class="row">
+      <div class="columnone">
+        <p id="filecontents"></p>
+      </div>
+      <div class="columntwo">
+        <p id="colorkey">
+        <span id="keyone">Parties Entering DUA</span></p>
+        <p id="colorkey">
+          <span id="keytwo">Research Purpose</span></p>
+        <p id="colorkey">
+            <span id="keythree">Definitions of Terms</span></p>
+        <p id="colorkey">
+          <span id="keyfour">Data Access and Use</span></p>
+        <p id="colorkey">
+            <span id="keyfive">Retention and Deletion</span></p>
+        <p id="colorkey">
+          <span id="keysix">Liability</span></p>
+        <p id="colorkey">
+          <span id="keyseven">Termination</span></p>
+        <p id="colorkey">
+          <span id="keyeight">Law and Jurisdiction</span></p>
+        <p id="colorkey">
+          <span id="keynine">Severability</span></p>
+        <p id="colorkey">
+          <span id="keyten">Modification</span></p>
+        <p id="colorkey">
+          <span id="keyeleven">Dispute Resolution</span></p>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <p>This tool can assess various Data Use Agreements and give lawyers a preliminary report of what criteria it meets and does not meet, legally and ethically speaking. However, it is essential that a lawyer still does a final review of the document. This tool is meant to aid, but not replace, human oversight.</p>
+  </div>
+
+
   <script>
     const dropzone = document.getElementById('dropzone');
     const parseButton = document.getElementById('parse-button');
     const filenameDiv = document.getElementById('filename');
     const fileContentsPre = document.getElementById('filecontents');
-    alert(fileContentsPre);
     let droppedFile = null;
 
     function handleDragOver(event) {
@@ -65,8 +271,18 @@
       //highlightText();
     }
     async function readFileAsText(file) {
+      var fileInput = document.getElementById(file);
+      var filePath = fileInput.value;
+      var allowedExtensions = /(\.pdf|)$/i;
+      const reader = None;
+
       return new Promise((resolve, reject) => {
-        const reader = new FileReader();
+        if (allowedExtensions.exec(filePath)){
+          reader = require("pdfreader").PdfReader;
+        }
+        else{
+          reader = new FileReader();
+        }
         reader.addEventListener('load', () => {
           resolve(reader.result);
         });
@@ -75,30 +291,81 @@
         });
         reader.readAsText(file);
       });
+
+    
     }
 
     parseButton.addEventListener('click', async () => {
       try {
         const fileContents = await readFileAsText(droppedFile);
         fileContentsPre.innerHTML = fileContents;
-        alert(fileContentsPre);
-        let outer = fileContentsPre.outerHTML
-        alert(outer);
-        let highlightedText = highlightText(fileContentsPre);
+        let outer = fileContentsPre.outerHTML;
+        let highlightedText = highlightText(outer);
         const result = document.querySelector("#result");
-        result.innerHTML = highlightedText;
-        //alert(fileContents);
+        fileContentsPre.outerHTML = highlightedText;
+        result.outerHTML = highlightedText;
       } catch (error) {
         console.error(error);
       }
     });
+    let parties = ['This Data Use Agreement is entered into', 'This Data Sharing Agreement is entered into', 'by and between', 'non-profit'];
+    let purpose = ['Research purpose', 'purpose of research', 'purposes of research'];
+    let definitions = ['means', 'is defined as','identifiable','definitions','Confidential information', 'Effective date', 'Personal information', 'Requestor', 'Researcher', 'Identifiable information', 'Identifiers'];
+    let access_and_use = ['restrictions', 'as permitted','Restriction on use', 'Solely', 'Written consent', 'As permitted under this Agreement', 'As permitted by this DUA', 'safeguards', 'transmit', 'mitigate'];
+    let data_retention_and_deletion = ['retain', 'years', 'retention', 'delete'];
+    let liability_and_indemnification = ['Be liable for', 'liabilities', 'liability', 'The Recipient assumes all liability for damages which may arise from its use, storage or disposal of the Data', 'Injunction'];
+    let termination = ['This Agreement shall be effective on', 'Terminate', 'Prior written notice', 'Upon termination', 'Cease use of all Data', 'Return and destroy', 'return', 'destroy',
+'If the return or destruction of the Data is not feasible nor practicable, Recipient shall continue the protections required under this Agreement', 'termination'];
+    let law_and_jurisdiction = ['Be governed by', 'Laws of the State of Illinois', 'Choice of law', 'law or regulation', 'law', 'jurisdiction'];
+    let severability = ['Conflict or violate applicable law', 'Invalid', 'Illegal', 'Unenforceable', 'The remaining terms', 'Shall remain in full force and effect'];
+    let modification = ['Modification of provision', 'waiver of provision', 'waiver of authorization', 'amendment of provision', 'Signed by both parties', 'In writing', 'altered', 'amended', 'modified', 'waived', 'waiver'];
+    let dispute_resolution = ['All disputes arising out of', 'Submitted for arbitration'];
+    let allterms = [parties, purpose, definitions, access_and_use, data_retention_and_deletion, liability_and_indemnification, termination, law_and_jurisdiction, severability, modification, dispute_resolution];
 
     function highlightText(parobj) {
-      const searchTerm = "verum";
-      alert(searchTerm)
-      const regex = new RegExp(searchTerm, "gi");
-      const highlightedText = parobj.replace(regex, `<span class="highlight">${searchTerm}</span>`);
-      alert(highlightedText);
+      const searchTerm = allterms;
+      let highlightedText = parobj;
+      for (let j=0; j<searchTerm.length; j++){
+        let termlist = searchTerm[j];
+        for (let i=0; i<termlist.length; i++){
+          term = termlist[i];
+          const regex = new RegExp(term, "gi");
+          if(j==0){
+          highlightedText = parobj.replace(regex, `<span id="highlightone">${term}</span>`);
+          }
+          else if(j==1){
+          highlightedText = parobj.replace(regex, `<span id="highlighttwo">${term}</span>`);
+          }
+          else if(j==2){
+          highlightedText = parobj.replace(regex, `<span id="highlightthree">${term}</span>`);
+          }
+          else if(j==3){
+          highlightedText = parobj.replace(regex, `<span id="highlightfour">${term}</span>`);
+          }
+          else if(j==4){
+          highlightedText = parobj.replace(regex, `<span id="highlightfive">${term}</span>`);
+          }
+          else if(j==5){
+          highlightedText = parobj.replace(regex, `<span id="highlightsix">${term}</span>`);
+          }
+          else if(j==6){
+          highlightedText = parobj.replace(regex, `<span id="highlightseven">${term}</span>`);
+          }
+          else if(j==7){
+          highlightedText = parobj.replace(regex, `<span id="highlighteight">${term}</span>`);
+          }
+          else if(j==8){
+          highlightedText = parobj.replace(regex, `<span id="highlightnine">${term}</span>`);
+          }
+          else if(j==9){
+          highlightedText = parobj.replace(regex, `<span id="highlightten">${term}</span>`);
+          }
+          else{
+          highlightedText = parobj.replace(regex, `<span id="highlighteleven">${term}</span>`);
+          }
+          parobj = highlightedText;
+        }
+      }
       return highlightedText;
     }
 
@@ -108,3 +375,7 @@
   </script>
 </body>
 </html>
+
+
+
+
