@@ -20,7 +20,7 @@
 
     #parse-button {
       margin:auto;
-      width:250px;
+      width:270px;
       height:60px;
       margin-bottom:0;
       background-color: #401f68;
@@ -29,7 +29,7 @@
     #parse-button:hover {
       margin-top:0px;
       height:60px;
-      width:250px;
+      width:270px;
       
       background-color: #63599e;
 
@@ -65,6 +65,13 @@
     .columntwo {
       flex: 30%;
       align-content:left;
+    }
+    .column{
+      flex:30%;
+      border-style: solid;
+      border-width: thin;
+      border-color: black;
+      text-align:center;
     }
 
     #colorkey{
@@ -236,6 +243,103 @@
       </div>
     </div>
   </div>
+  <div style="display: flex; justify-content: center; margin-top:60px;">
+    <div style="width: 25%; border-width:2px;
+    border-style:solid;
+    border-color:grey;">
+      <h2 style="text-align: center;">Requirement:</h2>
+    </div>
+    <div style="width: 20%; border-width:2px;
+    border-style:solid;
+    border-color:grey;">
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div style="display: flex; align-items: center;">
+          <h4 style="margin-left: 10px; margin-right:10px;">Satisfied:</h4>
+          <span style="color: green; font-size: 1.5em;">&#10004;</span>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <h4 style="margin-left: 10px; margin-right:10px;">Needs Further Review:</h4>
+          <span style="background-color: #f1c232; width: 1.25em; height: 1.24em; display: inline-block;"></span>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <h4 style="margin-left: 10px; margin-right:10px;">Not Satisfied:</h4>
+          <span style="color: red; font-size: 1.5em;">&#10006;</span>
+        </div>
+      </div>
+    </div>
+    <div style="width: 35%; border-width:2px;
+    border-style:solid;
+    border-color:grey;">
+      <h2 style="text-align: center;">Notes:</h2>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center;">
+    <div style="width: 25%; border-width:2px;
+    border-style:solid;
+    border-color:grey;">
+      <h4 style="text-align: center;">This is a sample requirement</h4>
+    </div>
+    <div style="width: 20%; border-width:2px;
+    border-style:solid;
+    border-color:grey;">
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div style="display: flex; align-items: center;">
+          <span style="margin-top:20px;color: green; font-size: 1.5em;">&#10004;</span>
+        </div>
+      </div>
+    </div>
+    <div style="width: 35%; border-width:2px;
+    border-style:solid;
+    border-color:grey;">
+      <p style="text-align: center;">These are the sentences that pertain to this specific requirement</p>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center;">
+    <div style="width: 25%; border-width:2px;
+    border-style:solid;
+    border-color:grey;">
+      <h4 style="text-align: center;">This is a sample requirement</h4>
+    </div>
+    <div style="width: 20%; border-width:2px;
+    border-style:solid;
+    border-color:grey;">
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div style="display: flex; align-items: center;">
+          <span style="margin-top:20px;color: red; font-size: 1.5em;">&#10006;</span>
+        </div>
+      </div>
+    </div>
+    <div style="width: 35%; border-width:2px;
+    border-style:solid;
+    border-color:grey;">
+      <p style="text-align: center;">This is a section we recommend you add to satisfy this requirement</p>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center;margin-bottom:30px;">
+    <div style="width: 25%; border-width:2px;
+    border-style:solid;
+    border-color:grey;">
+      <h4 style="text-align: center;">This is a sample requirement</h4>
+    </div>
+    <div style="width: 20%; border-width:2px;
+    border-style:solid;
+    border-color:grey;">
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div style="display: flex; align-items: center;">
+          <span style="margin-top:20px; background-color: #f1c232; width: 1.25em; height: 1.25em; display: inline-block;"></span>
+        </div>
+      </div>
+    </div>
+    <div style="width: 35%; border-width:2px;
+    border-style:solid;
+    border-color:grey;">
+      <p style="text-align: center;">This is a section we recommend you take a look at</p>
+    </div>
+  </div>
+  <button id="parse-button" style="display: block"><h1 id="button-content">Edit Requirements</h1></button>
+
+
+  
   <div id="footer">
     <p>This tool can assess various Data Use Agreements and give lawyers a preliminary report of what criteria it meets and does not meet, legally and ethically speaking. However, it is essential that a lawyer still does a final review of the document. This tool is meant to aid, but not replace, human oversight.</p>
   </div>
@@ -294,18 +398,18 @@
         console.error(error);
       }
     });
-    let parties = ['This Data Use Agreement is entered into', 'This Data Sharing Agreement is entered into', 'by and between', 'non-profit'];
-    let purpose = ['Research purpose', 'purpose of research', 'purposes of research'];
-    let definitions = ['means', 'is defined as','identifiable','definitions','Confidential information', 'Effective date', 'Personal information', 'Requestor', 'Researcher', 'Identifiable information', 'Identifiers'];
-    let access_and_use = ['restrictions', 'as permitted','Restriction on use', 'Solely', 'Written consent', 'As permitted under this Agreement', 'As permitted by this DUA', 'safeguards', 'transmit', 'mitigate'];
+    let parties = ['this Data Use Agreement is entered into', 'this Data Sharing Agreement is entered into', 'by and between', 'non-profit'];
+    let purpose = ['research purpose', 'purpose of research', 'purposes of research'];
+    let definitions = ['means', 'is defined as','identifiable','definitions','confidential information', 'effective date', 'personal information', 'Requestor', 'Researcher', 'identifiable information', 'identifiers'];
+    let access_and_use = ['restrictions', 'as permitted','restriction on use', 'solely', 'written consent', 'as permitted under this agreement', 'as permitted by this DUA', 'safeguards', 'transmit', 'mitigate'];
     let data_retention_and_deletion = ['retain', 'years', 'retention', 'delete'];
-    let liability_and_indemnification = ['Be liable for', 'liabilities', 'liability', 'The Recipient assumes all liability for damages which may arise from its use, storage or disposal of the Data', 'Injunction'];
-    let termination = ['This Agreement shall be effective on', 'Terminate', 'Prior written notice', 'Upon termination', 'Cease use of all Data', 'Return and destroy', 'return', 'destroy',
-'If the return or destruction of the Data is not feasible nor practicable, Recipient shall continue the protections required under this Agreement', 'termination'];
-    let law_and_jurisdiction = ['Be governed by', 'Laws of the State of Illinois', 'Choice of law', 'law or regulation', 'law', 'jurisdiction'];
-    let severability = ['Conflict or violate applicable law', 'Invalid', 'Illegal', 'Unenforceable', 'The remaining terms', 'Shall remain in full force and effect'];
+    let liability_and_indemnification = ['be liable for', 'liabilities', 'liability', 'the Recipient assumes all liability for damages which may arise from its use, storage or disposal of the Data', 'injunction'];
+    let termination = ['this agreement shall be effective on', 'terminate', 'prior written notice', 'upon termination', 'cease use of all data', 'return and destroy', 'return', 'destroy',
+'if the return or destruction of the Data is not feasible nor practicable, Recipient shall continue the protections required under this Agreement', 'termination'];
+    let law_and_jurisdiction = ['be governed by', 'laws of the state of Illinois', 'choice of law', 'law or regulation', 'law', 'jurisdiction'];
+    let severability = ['conflict or violate applicable law', 'invalid', 'illegal', 'unenforceable', 'the remaining terms', 'shall remain in full force and effect'];
     let modification = ['Modification of provision', 'waiver of provision', 'waiver of authorization', 'amendment of provision', 'Signed by both parties', 'In writing', 'altered', 'amended', 'modified', 'waived', 'waiver'];
-    let dispute_resolution = ['All disputes arising out of', 'Submitted for arbitration'];
+    let dispute_resolution = ['all disputes arising out of', 'submitted for arbitration'];
     let allterms = [parties, purpose, definitions, access_and_use, data_retention_and_deletion, liability_and_indemnification, termination, law_and_jurisdiction, severability, modification, dispute_resolution];
 
     function highlightText(parobj) {
