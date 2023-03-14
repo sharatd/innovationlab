@@ -1,4 +1,4 @@
-
+import PdfReader
 
 <!DOCTYPE html>
 <html>
@@ -270,19 +270,25 @@
       }
       //highlightText();
     }
+
+    async function readPDFAsText(file){
+      var fr=new FileReader();
+      var pdff = new Pdf2TextClass();
+      fr.onload=function(){
+          pdff.pdfToText(fr.result, null, (text) => { document.getElementById('result').innerText += text; });
+      }
+      fr.readAsDataURL(document.getElementById('pdffile').files[0])
+    }
+
     async function readFileAsText(file) {
-      var fileInput = document.getElementById(file);
-      var filePath = fileInput.value;
-      var allowedExtensions = /(\.pdf|)$/i;
-      const reader = None;
+      // var fileInput = document.getElementById(file);
+      // var filePath = fileInput.value;
+      // var allowedExtensions = /(\.pdf|)$/i;
+      //reader = new FileReader();
 
       return new Promise((resolve, reject) => {
-        if (allowedExtensions.exec(filePath)){
-          reader = require("pdfreader").PdfReader;
-        }
-        else{
-          reader = new FileReader();
-        }
+
+        const reader = new FileReader();
         reader.addEventListener('load', () => {
           resolve(reader.result);
         });
@@ -291,13 +297,38 @@
         });
         reader.readAsText(file);
       });
+      //   if (allowedExtensions.exec(filePath)){
+      //     reader = require("pdfreader").PdfReader;
+      //     new PdfReader().parseFileItems(file, function(err, item){
+      //     if (item && item.text){
+      //       reader.addEventListener('load', () => {
+      //         resolve(reader.result);
+      //       });
+      //       reader.addEventListener('error', () => {
+      //         reject(reader.error);
+      //       });
+      //       reader.readAsText(item.text);
+      //     }
+      //   }));
+      // //   else{
+        
+      // //     reader.addEventListener('load', () => {
+      // //       resolve(reader.result);
+      // //     });
+      // //     reader.addEventListener('error', () => {
+      // //       reject(reader.error);
+      // //     });
+      // //     reader.readAsText(file);
+      // //   }
+      // // });
 
-    
+      
     }
 
     parseButton.addEventListener('click', async () => {
       try {
-        const fileContents = await readFileAsText(droppedFile);
+        const fileContents = await readPDFAsText(droppedFile)
+        //const fileContents = await readFileAsText(droppedFile);
         fileContentsPre.innerHTML = fileContents;
         let outer = fileContentsPre.outerHTML;
         let highlightedText = highlightText(outer);
