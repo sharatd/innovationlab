@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,6 +41,28 @@
       width:250px;
       height:60px;
       justify-content:center;
+    }
+
+    #check-style-one{
+      margin-top: 15px;width: 30px; height: 30px; background-color: green; transform: rotate(45deg);
+    }
+    #check-style-two{
+      margin-top: 15px;width: 30px; height: 30px; background-color: green; transform: rotate(45deg);
+    }
+    #check-style-three{
+      margin-top: 15px;width: 30px; height: 30px; background-color: green; transform: rotate(45deg);
+    }
+    #check-style-four{
+      margin-top: 15px;width: 30px; height: 30px; background-color: green; transform: rotate(45deg);
+    }
+    #check-style-five{
+      margin-top: 15px;width: 30px; height: 30px; background-color: green; transform: rotate(45deg);
+    }
+
+
+    #ex-style{
+      width: 30px; height: 30px; background-color: red; margin-top:15px;
+
     }
 
     #filename {
@@ -208,6 +231,9 @@
   </style>
 </head>
 <body>
+
+
+
   <div id="header">
     <h1>Analyze Data Use Agreement</h1></div>
     <div id="dropzone">Drag and drop .txt files here</div>
@@ -255,88 +281,96 @@
       <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <div style="display: flex; align-items: center;">
           <h4 style="margin-left: 10px; margin-right:10px;">Satisfied:</h4>
-          <span style="color: green; font-size: 1.5em;">&#10004;</span>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <h4 style="margin-left: 10px; margin-right:10px;">Needs Further Review:</h4>
-          <span style="background-color: #f1c232; width: 1.25em; height: 1.24em; display: inline-block;"></span>
+          <div style="width: 15px; height: 15px; background-color: green; transform: rotate(45deg);"></div>
         </div>
         <div style="display: flex; align-items: center;">
           <h4 style="margin-left: 10px; margin-right:10px;">Not Satisfied:</h4>
-          <span style="color: red; font-size: 1.5em;">&#10006;</span>
+          <div style="width: 15px; height: 15px; background-color: red;"></div>
         </div>
       </div>
     </div>
-    <div style="width: 35%; border-width:2px;
-    border-style:solid;
-    border-color:grey;">
-      <h2 style="text-align: center;">Notes:</h2>
-    </div>
+    
   </div>
   <div style="display: flex; justify-content: center;">
     <div style="width: 25%; border-width:2px;
     border-style:solid;
     border-color:grey;">
-      <h4 style="text-align: center;">This is a sample requirement</h4>
+      <h4 style="text-align: center;">Publicity</h4>
     </div>
     <div style="width: 20%; border-width:2px;
     border-style:solid;
     border-color:grey;">
       <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <div style="display: flex; align-items: center;">
-          <span style="margin-top:20px;color: green; font-size: 1.5em;">&#10004;</span>
+          <div id="check-style-one"></div>
         </div>
       </div>
-    </div>
-    <div style="width: 35%; border-width:2px;
-    border-style:solid;
-    border-color:grey;">
-      <p style="text-align: center;">These are the sentences that pertain to this specific requirement</p>
     </div>
   </div>
   <div style="display: flex; justify-content: center;">
     <div style="width: 25%; border-width:2px;
     border-style:solid;
     border-color:grey;">
-      <h4 style="text-align: center;">This is a sample requirement</h4>
+      <h4 style="text-align: center;">Free To Publish</h4>
     </div>
     <div style="width: 20%; border-width:2px;
     border-style:solid;
     border-color:grey;">
       <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <div style="display: flex; align-items: center;">
-          <span style="margin-top:20px;color: red; font-size: 1.5em;">&#10006;</span>
+          <div id="check-style-two"></div>
         </div>
       </div>
     </div>
-    <div style="width: 35%; border-width:2px;
+  </div>
+  <div style="display: flex; justify-content: center;">
+    <div style="width: 25%; border-width:2px;
+      border-style:solid;
+      border-color:grey;">
+      <h4 style="text-align: center;">Security</h4>
+    </div>
+    <div style="width: 20%; border-width:2px;
+      border-style:solid;
+      border-color:grey;">
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div style="display: flex; align-items: center;">
+          <div id="check-style-three"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center;">
+    <div style="width: 25%; border-width:2px;
+      border-style:solid;
+      border-color:grey;">
+      <h4 style="text-align: center;">Governing Law</h4>
+    </div>
+    <div style="width: 20%; border-width:2px;
     border-style:solid;
     border-color:grey;">
-      <p style="text-align: center;">This is a section we recommend you add to satisfy this requirement</p>
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div style="display: flex; align-items: center;">
+          <div id="check-style-four"></div>
+        </div>
+      </div>
     </div>
   </div>
   <div style="display: flex; justify-content: center;margin-bottom:30px;">
     <div style="width: 25%; border-width:2px;
-    border-style:solid;
-    border-color:grey;">
-      <h4 style="text-align: center;">This is a sample requirement</h4>
+      border-style:solid;
+      border-color:grey;">
+      <h4 style="text-align: center;">Remove Third Party Beneficiary Language</h4>
     </div>
     <div style="width: 20%; border-width:2px;
     border-style:solid;
     border-color:grey;">
       <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <div style="display: flex; align-items: center;">
-          <span style="margin-top:20px; background-color: #f1c232; width: 1.25em; height: 1.25em; display: inline-block;"></span>
+          <div id="check-style-five"></div>
         </div>
       </div>
     </div>
-    <div style="width: 35%; border-width:2px;
-    border-style:solid;
-    border-color:grey;">
-      <p style="text-align: center;">This is a section we recommend you take a look at</p>
-    </div>
   </div>
-  <button id="parse-button" style="display: block"><h1 id="button-content">Edit Requirements</h1></button>
 
 
   
@@ -345,7 +379,7 @@
   </div>
 
 
-  <script>
+  <script type="text/javascript">
     const dropzone = document.getElementById('dropzone');
     const parseButton = document.getElementById('parse-button');
     const filenameDiv = document.getElementById('filename');
@@ -356,6 +390,9 @@
       event.preventDefault();
       dropzone.classList.add('highlight');
     }
+    function square(number) {
+        return number * number;
+}
 
     function handleDragLeave(event) {
       dropzone.classList.remove('highlight');
@@ -391,9 +428,54 @@
         fileContentsPre.innerHTML = fileContents;
         let outer = fileContentsPre.outerHTML;
         let highlightedText = highlightText(outer);
+        //alert(fileContents)
+        let publicity = check_publicity(fileContents);
+        if (publicity==false){
+          var element = document.getElementById("check-style-one");
+          element.style.backgroundColor = "red";
+          element.style.transform = "rotate(90deg)";
+          element.style.backgroundColor = "red";
+        }
+        let publish = check_publish(fileContents);
+        if (publish==false){
+          var element = document.getElementById("check-style-two");
+          element.style.backgroundColor = "red";
+          element.style.transform = "rotate(90deg)";
+          element.style.backgroundColor = "red";
+        }
+        let security = check_security(fileContents);
+        if (security==false){
+          var element = document.getElementById("check-style-three");
+          element.style.backgroundColor = "red";
+          element.style.transform = "rotate(90deg)";
+          element.style.backgroundColor = "red";
+        }
+        let jur = check_jurisdiction(fileContents);
+        if (jur==false){
+          var element = document.getElementById("check-style-four");
+          element.style.backgroundColor = "red";
+          element.style.transform = "rotate(90deg)";
+          element.style.backgroundColor = "red";
+        }
+        let third = check_thirdparty(fileContents);
+        if (third==false){
+          var element = document.getElementById("check-style-five");
+          element.style.backgroundColor = "red";
+          element.style.transform = "rotate(90deg)";
+          element.style.backgroundColor = "red";
+        }
         const result = document.querySelector("#result");
         fileContentsPre.outerHTML = highlightedText;
         result.outerHTML = highlightedText;
+        //check_publicity(fileContents);
+        ///
+
+        $.ajax({
+          type:"POST",
+          url:"~/testchatgpt.py",
+          data:{param:text}
+        }).done(ask_chat(fileContents));
+        alert("made it here")
       } catch (error) {
         console.error(error);
       }
@@ -459,13 +541,109 @@
       return highlightedText;
     }
 
+    function check_publish(thetext){
+      if (thetext.includes("free to publish")){
+        return true
+      }
+      else if (thetext.includes("FREE TO PUBLISH")){
+        return true
+      }
+      else if (thetext.includes("Free To Publish")){
+        return true
+      }
+      else if (thetext.includes("Free to publish")){
+        return true
+      }
+      else{
+        return false
+      }
+    }
+
+    function check_security(thetext){
+      if (thetext.includes("safeguards")){
+        return true
+      }
+      else if (thetext.includes("SAFEGUARDS")){
+        return true
+      }
+      else if (thetext.includes("Safeguards")){
+        return true
+      }
+      else{
+        return false
+      }
+    }
+
+    function check_jurisdiction(thetext){
+      let textarray = thetext.split(" ");
+      let counter=0;
+      let flag = false;
+      let space = 0;
+      if (thetext.includes("laws of the State of Illinois")){
+        return true
+      }
+      else if (thetext.includes("LAWS OF THE STATE OF ILLINOIS")){
+        return true
+      }
+      else if (thetext.includes("laws of the state of Illinois")){
+        return true
+      }
+      else {
+        return false
+      }
+    }
+
+    function check_thirdparty(thetext){
+      if (thetext.includes("Third Party Beneficiary")){
+        return false
+      }
+      else if (thetext.includes("third party beneficiary")){
+        return false
+      }
+      else if (thetext.includes("THIRD PARTY BENEFICIARY")){
+        return false
+      }
+      else {
+        return true
+      }
+    }
+
+    
+
+    function check_publicity(thetext){
+      let textarray = thetext.split(" ");
+      let counter=0;
+      let flag = false;
+      let space = 0;
+
+      while (counter<textarray.length){
+        theword = textarray[counter];
+        counter+=1;
+        if (flag==true){
+          if (theword.includes("trade")){
+            if (space<20){
+              return true
+            }
+          }
+          else{
+            space+=1;
+          }
+        }
+        else if(theword=="Neither"){
+          flag = true;
+          space = 0;
+        }
+        else if(theword=="neither"){
+          flag = true;
+          space = 0;
+        }
+      }
+      return false;
+    }
+
     dropzone.addEventListener('dragover', handleDragOver);
     dropzone.addEventListener('dragleave', handleDragLeave);
     dropzone.addEventListener('drop', handleDrop);
   </script>
 </body>
 </html>
-
-
-
-
